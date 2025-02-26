@@ -1,7 +1,9 @@
 #!/bin/bash
 
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
 # Host configuration file with IP, host, token, and URL base
-HOST_FILE="hosts.conf"
+HOST_FILE="${SCRIPT_DIR}/hosts.conf"
 
 # Set User-Agent Header
 USER_AGENT="User-Agent: Chrome/131.0.6778.205"
@@ -10,7 +12,7 @@ USER_AGENT="User-Agent: Chrome/131.0.6778.205"
 INSECURE_FLAG="--insecure"
 
 # Log file with timestamp
-LOG_FILE="sramon_$(date +'%Y-%m-%d_%H%M%S').log"
+LOG_FILE="${SCRIPT_DIR}/logs/sramon_$(date +'%Y-%m-%d_%H%M%S').log"
 
 # Colors for formatting
 GREEN='\033[0;32m'
